@@ -1,0 +1,69 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django-specific
+*.log
+db.sqlite3
+db.sqlite3-journal
+/media/
+staticfiles/
+static/
+*.pyc
+*.pyo
+*.pyd
+
+# Django migrations
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Environment variables
+.env
+*.env
+
+# Pytest and coverage reports
+.coverage
+htmlcov/
+*.cover
+coverage.xml
+*.py,cover
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js dependencies (if frontend included)
+node_modules/
+
+# Deployment
+*.tar
+*.zip
+*.gz
+.DS_Store
+
+# Celery beat schedule
+celerybeat-schedule
+
+# Docker
+docker-compose.override.yml
+
+# Gunicorn
+gunicorn.log
+gunicorn.err
+gunicorn.sock
+
+# PostgreSQL dumps
+*.dump
+
+# Ignore compiled translations
+*.mo
+
+# Ignore pytest cache
+.pytest_cache/
