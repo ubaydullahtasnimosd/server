@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'Articles_Essays',
     'Miscellaneous',
     'About_Author',
+    'Comment',
 ]
 
 MIDDLEWARE = [

@@ -9,5 +9,6 @@ urlpatterns = [
     path('api/v1/articles_essays', include('Articles_Essays.urls')),
     path('api/v1/miscellaneous', include('Miscellaneous.urls')),
     path('api/v1/about_author', include('About_Author.urls')),
+    path('api/v1/comment', include('Comment.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
