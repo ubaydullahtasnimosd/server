@@ -7,5 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/book', include('book.urls')),
     path('api/v1/articles_essays', include('Articles_Essays.urls')),
+    path('api/v1/miscellaneous', include('Miscellaneous.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

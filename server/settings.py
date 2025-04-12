@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'corsheaders',
     #my app
     'book',
-    'Articles_Essays'
+    'Articles_Essays',
+    'Miscellaneous',
 ]
 
 MIDDLEWARE = [
