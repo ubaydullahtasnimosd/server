@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'book',
     'Articles_Essays',
     'Miscellaneous',
+    'About_Author',
 ]
 
 MIDDLEWARE = [
