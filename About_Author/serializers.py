@@ -4,4 +4,4 @@ from .models import AboutAuthor
 class AboutAuthorSerializers(serializers.ModelSerializer):
     class Meta:
         model = AboutAuthor
-        fields = ['aboutAuthorName', 'aboutAuthorDescription']
+        fields = ['aboutAuthorImg', 'aboutAuthorName', 'aboutAuthorDescription']

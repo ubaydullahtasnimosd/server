@@ -1,6 +1,7 @@
 from django.db import models
 
 class AboutAuthor(models.Model):
+    aboutAuthorImg = models.CharField(max_length=2000, verbose_name='লেখকের ছবি')
     aboutAuthorName = models.CharField(max_length=200, verbose_name='লেখকের নাম')
     aboutAuthorDescription = models.TextField(verbose_name='লেখক সম্পর্কে বিস্তারিত লিখুন')
 
