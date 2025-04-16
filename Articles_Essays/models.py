@@ -7,6 +7,7 @@ class Articles_Essays(models.Model):
     articlesEssaysAuthor = models.CharField(max_length=300, verbose_name='প্রবন্ধ-নিবন্ধর লেখকের নাম')
     articlesEssaysDescription = models.TextField(verbose_name='প্রবন্ধ-নিবন্ধ সম্পর্কে বিস্তারিত', blank=True, null=True)
     articlesEssaysQRCodeScen = models.TextField(verbose_name='প্রবন্ধ-নিবন্ধর প্রকাশনা এবং স্ক্যান করা')
+    articlesEssaysQRCodeScenImg = models.CharField(max_length=2000, verbose_name='প্রবন্ধ-নিবন্ধর স্ক্যান করার ছবি')
     articlesEssaysCreateAt = models.DateTimeField(auto_now_add=True, verbose_name='ওয়েবসাইটে প্রবন্ধ-নিবন্ধ প্রকাশের তারিখ')
     articlesEssaysUpdateAt = models.DateTimeField(auto_now=True, verbose_name='প্রবন্ধ-নিবন্ধ লেখা ইডিট এর তারিখ')
 
