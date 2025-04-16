@@ -7,6 +7,7 @@ class Book(models.Model):
     bookTitle = models.CharField(max_length=1000, verbose_name='লেখকের বইয়ের নাম')
     bookPublication = models.CharField(max_length=1000, verbose_name='লেখকের বইয়ের প্রকাশনা')
     bookDescription = models.TextField(verbose_name='লেখকের বইয়ের বিস্তারিত লেখা')
+    bookPurchaseLink = models.CharField(max_length=2000, verbose_name='এখানে বইয়ের ক্রয়ের লিংক')
     bookCreatedAt = models.DateTimeField(auto_now_add=True, verbose_name='ওয়েবসাইটে বই প্রকাশের তারিখ')
     bookUpdateAt = models.DateTimeField(auto_now=True, verbose_name='বইয়ের লেখা ইডিট এর তারিখ')
 
