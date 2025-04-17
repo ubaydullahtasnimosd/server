@@ -17,7 +17,7 @@ class Subscriber(models.Model):
         return f'{self.name} - {self.email}'
     
     def send_verification_email(self, *args, **kwargs):
-        verification_link = f'{settings.BASE_URL}/verify?verification_token=${self.verification_token}'
+        verification_link = f'{settings.BASE_URL}/verify?verification_token={self.verification_token}'
         subject = 'আপনার সাবস্ক্রিপশন নিশ্চিত করুন'
         html_message = render_to_string('verification_email.html',{
             'name': self.name,
