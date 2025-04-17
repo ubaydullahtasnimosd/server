@@ -173,4 +173,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
-BASE_URL = env('BACKEND_BASE_URL')
+
+BASE_URL = 'https://server-iota-ebon-83.vercel.app'
