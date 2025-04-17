@@ -27,25 +27,29 @@ class Book(models.Model):
             self.send_new_book_notification()
 
     def send_new_book_notification(self):
-        subscribers = Subscriber.objects.filter(is_verified=True)  
+        subscribers = Subscriber.objects.filter(is_verified=True)
         
         for subscriber in subscribers:
-            subject = f"নতুন বই যোগ হয়েছে : {self.bookTitle}"
-            html_message = render_to_string('new_book_notification.html', {
-                'subscriber': subscriber,
-                'book': self,
-                'base_url': settings.BASE_URL,
-            })
-            plain_message = strip_tags(html_message)
-            
-            send_mail(
-                subject=subject,
-                message=plain_message,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[subscriber.email],
-                html_message=html_message,
-                fail_silently=False,
-            )
-    
+            try:
+                subject = f"নতুন বই যোগ হয়েছে : {self.bookTitle}"
+                html_message = render_to_string('new_book_notification.html', {
+                    'subscriber': subscriber,
+                    'book': self,
+                    'base_url': settings.BASE_URL,
+                })
+                plain_message = strip_tags(html_message)
+                
+                send_mail(
+                    subject=subject,
+                    message=plain_message,
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[subscriber.email],
+                    html_message=html_message,
+                    fail_silently=False,
+                )
+                print(f"ইমেইল পাঠানো হয়েছে: {subscriber.email}") 
+            except Exception as e:
+                print(f"ইমেইল পাঠাতে ব্যর্থ: {subscriber.email}, এরর: {str(e)}")  
+
     class Meta:
         verbose_name_plural = 'লেখকের বইগুলো'
