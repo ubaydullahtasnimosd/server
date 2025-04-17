@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>নতুন বই যোগ হয়েছে</title>
+</head>
+<body>
+    <p>প্রিয় {{ subscriber.name }},</p>
+    <p>আমাদের সংগ্রহে নতুন বই যোগ করা হয়েছে : </p>
+    
+    <h2>{{ book.bookTitle }}</h2>
+    <p><strong>প্রকাশনী : </strong> {{ book.bookPublication }}</p>
+    <p>{{ book.bookDescription | truncatewords:30 }}</p>
+    
+    <a href="{{ base_url }}{% url 'book-detail' book.id %}" style="color: #ffffff; background-color: #4CAF50; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+        বইটি দেখুন
+    </a>
+    
+    <p>ধন্যবাদান্তে,<br>ওবায়দুল্লাহ তাসনিম</p>
+</body>
+</html>

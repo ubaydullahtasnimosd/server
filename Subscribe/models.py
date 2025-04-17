@@ -50,3 +50,5 @@ class Subscriber(models.Model):
 
     class Meta:
         verbose_name_plural = 'সাবস্ক্রাইবার'
+
+

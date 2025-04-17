@@ -1,5 +1,10 @@
 from django.db import models
 import uuid
+from django.core.mail import send_mail
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from Subscribe .models import Subscriber 
 
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -13,6 +18,34 @@ class Book(models.Model):
 
     def __str__(self):
         return f'{self.bookTitle}'
+    
+    def save(self, *args, **kwargs):
+        is_new = not self.pk 
+        super().save(*args, **kwargs)
+        
+        if is_new:  
+            self.send_new_book_notification()
+
+    def send_new_book_notification(self):
+        subscribers = Subscriber.objects.filter(is_verified=True)  
+        
+        for subscriber in subscribers:
+            subject = f"নতুন বই যোগ হয়েছে : {self.bookTitle}"
+            html_message = render_to_string('new_book_notification.html', {
+                'subscriber': subscriber,
+                'book': self,
+                'base_url': settings.BASE_URL,
+            })
+            plain_message = strip_tags(html_message)
+            
+            send_mail(
+                subject=subject,
+                message=plain_message,
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[subscriber.email],
+                html_message=html_message,
+                fail_silently=False,
+            )
     
     class Meta:
         verbose_name_plural = 'লেখকের বইগুলো'
