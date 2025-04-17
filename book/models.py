@@ -20,11 +20,12 @@ class Book(models.Model):
         return f'{self.bookTitle}'
     
     def save(self, *args, **kwargs):
-        is_new = not self.pk 
+        is_new = self._state.adding
         super().save(*args, **kwargs)
-        
-        if is_new:  
+
+        if is_new:
             self.send_new_book_notification()
+
 
     def send_new_book_notification(self):
         subscribers = Subscriber.objects.filter(is_verified=True)
