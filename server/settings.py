@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'About_Author',
     'Comment',
     'Subscribe',
+    'Readers_Love',
 ]
 
 MIDDLEWARE = [
