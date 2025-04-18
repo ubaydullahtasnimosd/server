@@ -6,6 +6,6 @@ class ReadersLoveListCreateView(generics.ListCreateAPIView):
     queryset = Readers_Love.objects.all().order_by('-readersReviewCreated')
     serializer_class = ReadersLoveSerializer
 
-class ReadersLoveImgListView(generics.ListAPIView):
+class ReadersLoveImgListView(generics.ListCreateAPIView):
     queryset = Readers_Love_Img.objects.all().order_by('-readersReviewCreated')
     serializer_class = ReadersLoveImgSerializer
