@@ -6,7 +6,7 @@ class CommentSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['id', 'userName', 'userEmail', 'userImage', 'userMessage', 'commentCreateAt', 'parent_comment', 'replies']
+        fields = ['id', 'userName', 'userMessage', 'commentCreateAt', 'parent_comment', 'replies']
         read_only_fields = ['commentCreateAt']
 
     def get_replies(self, obj):
@@ -20,7 +20,7 @@ class CommentSerializers(serializers.ModelSerializer):
 class CreateCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['userName', 'userEmail', 'userImage', 'userMessage', 'parent_comment']
+        fields = ['userName', 'userMessage', 'parent_comment']
 
     def validate_parent_comment(self, value):
         if value and value.parent_comment:
