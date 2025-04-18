@@ -4,7 +4,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from Subscribe .models import Subscriber 
 
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -27,7 +26,8 @@ class Book(models.Model):
             self.send_new_book_notification()
 
 
-    def send_new_book_notification(self):
+    def send_new_book_notification(self, *args, **kwargs):
+        from Subscribe.models import Subscriber 
         subscribers = Subscriber.objects.filter(is_verified=True)
         
         for subscriber in subscribers:
