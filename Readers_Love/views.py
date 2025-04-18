@@ -1,11 +1,11 @@
 from rest_framework import generics
-from .serializers import ReadersLoveListSerializer, ReadersLoveImageSerializer
-from .models import Readers_Love
+from .models import Readers_Love, Readers_Love_Img
+from .serializers import ReadersLoveSerializer, ReadersLoveImgSerializer
 
-class ReadersLoveListView(generics.ListCreateAPIView):
-    queryset = Readers_Love.objects.all()
-    serializer_class = ReadersLoveListSerializer
+class ReadersLoveListCreateView(generics.ListCreateAPIView):
+    queryset = Readers_Love.objects.all().order_by('-readersReviewCreated')
+    serializer_class = ReadersLoveSerializer
 
-class ReadersLoveImageView(generics.ListCreateAPIView):
-    queryset = Readers_Love.objects.all()
-    serializer_class = ReadersLoveImageSerializer
+class ReadersLoveImgListView(generics.ListAPIView):
+    queryset = Readers_Love_Img.objects.all().order_by('-readersReviewCreated')
+    serializer_class = ReadersLoveImgSerializer
