@@ -1,7 +1,11 @@
 from rest_framework import generics
-from .serializers import ReadersLoveSerializers
+from .serializers import ReadersLoveListSerializer, ReadersLoveImageSerializer
 from .models import Readers_Love
 
-class ReadersLoveApiView(generics.ListCreateAPIView):
+class ReadersLoveListView(generics.ListCreateAPIView):
     queryset = Readers_Love.objects.all()
-    serializer_class = ReadersLoveSerializers
+    serializer_class = ReadersLoveListSerializer
+
+class ReadersLoveImageView(generics.ListCreateAPIView):
+    queryset = Readers_Love.objects.all()
+    serializer_class = ReadersLoveImageSerializer

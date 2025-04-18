@@ -12,3 +12,13 @@ class Readers_Love(models.Model):
     
     class Meta:
         verbose_name_plural = 'পাঠকের ভালোবাসা'
+        
+class Readers_Love_Img(models.Model):
+    readersBookImg = models.CharField(max_length=2000, default='', verbose_name='রিভিউকৃত বইয়ের ছবি')
+    readersReviewCreated = models.DateTimeField(auto_now_add=True, verbose_name='রিভিয়ের তারিখ')
+
+    def __str__(self):
+        return f'{self.readersBookImg}'
+    
+    class Meta:
+        verbose_name_plural = 'পাঠকের ভালোবাসা | বইয়ের কভারসমূহ'
