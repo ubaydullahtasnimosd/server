@@ -1,7 +1,6 @@
 from django.db import models
 
 class Readers_Love(models.Model):
-    readersBookImg = models.CharField(max_length=2000, default='', verbose_name='রিভিউকৃত বইয়ের ছবি')
     readersBookName = models.CharField(max_length=1000, verbose_name='রিভিউকৃত বইয়ের নাম')
     readersName = models.CharField(max_length=1000, verbose_name='পাঠকের নাম')
     readersReview = models.TextField(verbose_name='রিভিউ সম্পর্কে বিস্তারিত') 

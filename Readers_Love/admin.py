@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Readers_Love_Img, Readers_Love
 
 class ReadersLoveAdmin(admin.ModelAdmin):
-    list_display = ['readersBookImg', 'readersBookName', 'readersName', 'readersReview', 'readersReviewCreated']
+    list_display = ['readersBookName', 'readersName', 'readersReview', 'readersReviewCreated']
 
 class ReadersLoveImgAdmin(admin.ModelAdmin):
     list_display = ['readersBookImg', 'readersReviewCreated']

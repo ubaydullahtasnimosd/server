@@ -9,4 +9,4 @@ class ReadersLoveImgSerializer(serializers.ModelSerializer):
 class ReadersLoveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Readers_Love
-        fields = ['id', 'readersBookImg', 'readersBookName', 'readersName', 'readersReview', 'readersReviewCreated']
+        fields = ['readersBookName', 'readersName', 'readersReview', 'readersReviewCreated']
