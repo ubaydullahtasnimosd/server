@@ -11,6 +11,6 @@ urlpatterns = [
     path('api/v1/about_author/', include('About_Author.urls')),
     path('api/v1/comment/', include('Comment.urls')),
     path('api/v1/subscribe/', include('Subscribe.urls')),
-    # path('api/v1/readers_love/', include('Readers_Love.urls')),
+    path('api/v1/readers_love/', include('Readers_Love.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
