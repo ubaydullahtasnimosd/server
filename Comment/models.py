@@ -6,7 +6,7 @@ class Comment(models.Model):
     userName = models.CharField(max_length=500, verbose_name='কমেন্টকারীর নাম')
     userMessage = models.TextField(verbose_name='কমেন্টকারীর কমেন্ট')
     commentCreateAt = models.DateTimeField(auto_now_add=True, verbose_name='কমেন্টকারী কখন কমেন্টটি করেছে')
-    parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies', verbose_name='যে কমেন্ট করেছে')
+    parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies', verbose_name='মূল কমেন্ট')
 
     def __str__(self):
         return f'Comment By - {self.userName}'

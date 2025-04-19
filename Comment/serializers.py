@@ -20,7 +20,8 @@ class CommentSerializers(serializers.ModelSerializer):
 class CreateCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['userName', 'userMessage', 'parent_comment']
+        fields = ['id', 'userName', 'userMessage', 'parent_comment']
+        read_only_fields = ['id']
 
     def validate_parent_comment(self, value):
         if value and value.parent_comment:
