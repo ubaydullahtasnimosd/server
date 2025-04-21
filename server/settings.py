@@ -33,8 +33,7 @@ ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
-    # 'https://ubaydullah-tasnim.netlify.app',
+    'https://nazmus-shakib.netlify.app/',
 ]
 
 # Application definition
