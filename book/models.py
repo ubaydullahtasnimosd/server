@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from Comment .models import Comment
 
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -18,13 +19,16 @@ class Book(models.Model):
     def __str__(self):
         return f'{self.bookTitle}'
     
+    @property
+    def ccomments(self):
+        return Comment.objects.filter(content_type__model='book', object_id=self.id)
+
     def save(self, *args, **kwargs):
         is_new = self._state.adding
         super().save(*args, **kwargs)
 
         if is_new:
             self.send_new_book_notification()
-
 
     def send_new_book_notification(self, *args, **kwargs):
         from Subscribe.models import Subscriber 
@@ -50,7 +54,7 @@ class Book(models.Model):
                 )
                 print(f"ইমেইল পাঠানো হয়েছে: {subscriber.email}") 
             except Exception as e:
-                print(f"ইমেইল পাঠাতে ব্যর্থ: {subscriber.email}, এরর: {str(e)}")  
+                print(f"ইমেইল পাঠাতে ব্যর্থ: {subscriber.email}, এরর: {str(e)}")
 
     class Meta:
         verbose_name_plural = 'লেখকের বইগুলো'

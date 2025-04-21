@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from Comment .models import Comment
 
 class Articles_Essays(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4 , editable=False)
@@ -13,6 +14,10 @@ class Articles_Essays(models.Model):
 
     def __str__(self):
         return f'{self.articlesEssaysName}'
+    
+    @property
+    def comments(self):
+        return Comment.objects.filter(content_type__model = 'articles_essays', object_id=self.id)
     
     class Meta:
         verbose_name_plural = 'প্রবন্ধ-নিবন্ধ'
