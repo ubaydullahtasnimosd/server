@@ -4,6 +4,7 @@ from Comment .models import Comment
 
 class Articles_Essays(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4 , editable=False)
+    articlesEssaysImg = models.CharField(max_length=3000, default='', null=True, blank=True)
     articlesEssaysName = models.CharField(max_length=1000, verbose_name='প্রবন্ধ-নিবন্ধর নাম')
     articlesEssaysAuthor = models.CharField(max_length=300, verbose_name='প্রবন্ধ-নিবন্ধর লেখকের নাম')
     articlesEssaysDescription = models.TextField(verbose_name='প্রবন্ধ-নিবন্ধ সম্পর্কে বিস্তারিত', blank=True, null=True)
