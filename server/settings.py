@@ -34,6 +34,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'https://ubaydullah-tasnim.vercel.app',
+    'http://localhost:5173',
 ]
 
 # Application definition
@@ -176,4 +177,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
-BASE_URL = 'https://ubaydullah-tasnim.netlify.app'
+# BASE_URL = 'http://localhost:5173'
+BASE_URL = 'https://ubaydullah-tasnim.vercel.app'
