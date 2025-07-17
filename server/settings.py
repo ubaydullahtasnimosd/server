@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from pathlib import Path
 import environ
 env = environ.Env()
@@ -174,8 +177,8 @@ SITE_ID=1
 EMAIL_HOST = "smtp.gmail.com"   
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env("EMAIL")
-EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 # BASE_URL = 'http://localhost:5173'
 BASE_URL = 'https://ubaydullah-tasnim.vercel.app'
