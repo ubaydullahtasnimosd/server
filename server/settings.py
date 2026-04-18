@@ -42,7 +42,25 @@ CORS_ALLOWED_ORIGINS = [
 
 # Application definition
 
+UNFOLD = {
+    "SITE_TITLE": "Ubaydullah Tasnim Admin",
+    "SITE_HEADER": "Ubaydullah Tasnim Dashboard",
+    "SITE_SUBHEADER": "Content Management System",
+    "SITE_SYMBOL": "menu_book",
+    "SITE_URL": "/",
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,
+    },
+    "LOGIN": {
+        "redirect_after": "/admin/",
+    },
+}
+
 INSTALLED_APPS = [
+    'unfold',
     'whitenoise.runserver_nostatic', 
     #pre
     'django.contrib.admin',
