@@ -76,6 +76,9 @@ INSTALLED_APPS = [
     #my app
     'book',
     'Articles_Essays',
+    'Quran_Life_Lessons',
+    'Hadith_Life_Lessons',
+    'Life_Lessons',
     'Miscellaneous',
     'About_Author',
     'Comment',

@@ -21,6 +21,10 @@ static/
 # Django migrations
 **/migrations/*.py
 !**/migrations/__init__.py
+!Quran_Life_Lessons/migrations/0001_initial.py
+!Hadith_Life_Lessons/migrations/0001_initial.py
+!Life_Lessons/migrations/0001_initial.py
+!Miscellaneous/migrations/0002_culture_history_politics_travel_worldview.py
 
 # Environment variables
 .env
