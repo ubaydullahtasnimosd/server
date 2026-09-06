@@ -40,6 +40,13 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
 ]
 
+# Supabase Storage (S3-Compatible) Configuration
+SUPABASE_URL = env('SUPABASE_URL', default='https://mmcyfjqjlfernxfluupw.supabase.co')
+SUPABASE_S3_ENDPOINT_URL = env('SUPABASE_S3_ENDPOINT_URL', default='https://mmcyfjqjlfernxfluupw.storage.supabase.co/storage/v1/s3')
+SUPABASE_S3_ACCESS_KEY_ID = env('SUPABASE_S3_ACCESS_KEY_ID', default='')
+SUPABASE_S3_SECRET_ACCESS_KEY = env('SUPABASE_S3_SECRET_ACCESS_KEY', default='')
+SUPABASE_S3_REGION_NAME = env('SUPABASE_S3_REGION_NAME', default='ap-southeast-1')
+
 # Application definition
 
 UNFOLD = {
